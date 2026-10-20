@@ -40,6 +40,7 @@ Four possible outputs:
   > - `/__SKILL_NAME__ send <agent> <message>` — send a message
   > - `/__SKILL_NAME__ team` — list team members
   > - `/__SKILL_NAME__ history` — message history
+  > - `/__SKILL_NAME__ search <keyword>` — search past messages
 
   5. **REQUIRED — Do NOT skip this step.** Ask the user to pick a delivery mode using exactly this prompt:
 
@@ -104,6 +105,9 @@ Each output line is one message: `<ts> | <team> | <from> -> <to> | <body>`. Reac
 
 If argument is "history":
 1. Run: `~/.agents/skills/__SKILL_NAME__/scripts/history.sh $TEAM $AGENT`
+
+If argument is "search":
+1. Run: `~/.agents/skills/__SKILL_NAME__/scripts/search.sh $TEAM <keyword> $AGENT`
 
 If argument is "team":
 1. For each TEAM, run: `~/.agents/skills/__SKILL_NAME__/scripts/team.sh $TEAM`

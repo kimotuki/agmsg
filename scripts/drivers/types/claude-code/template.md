@@ -39,6 +39,7 @@ Four possible outputs:
   > - `/__SKILL_NAME__ send <agent> <message>` — send a message
   > - `/__SKILL_NAME__ team` — list team members
   > - `/__SKILL_NAME__ history` — message history
+  > - `/__SKILL_NAME__ search <keyword>` — search past messages
   > - `/__SKILL_NAME__ mode <monitor|turn|both|off>` — switch delivery mode
   > - `/__SKILL_NAME__ actas <name>` — switch to another role in this project (creates if needed)
   > - `/__SKILL_NAME__ drop <name>` — remove a role from this project
@@ -119,6 +120,9 @@ The allowlist merges across scopes and takes effect immediately — no restart n
 
 If argument is "history":
 1. Run: `~/.agents/skills/__SKILL_NAME__/scripts/history.sh $TEAM $AGENT`
+
+If argument is "search":
+1. Run: `~/.agents/skills/__SKILL_NAME__/scripts/search.sh $TEAM <keyword> $AGENT`
 
 If argument is "team":
 1. For each TEAM, run: `~/.agents/skills/__SKILL_NAME__/scripts/team.sh $TEAM`

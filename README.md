@@ -268,6 +268,7 @@ The command updates `db/config.yaml`, rewrites the project's hook entries, and p
 ```
 /agmsg                                  — check inbox (all teams)
 /agmsg history                          — message history
+/agmsg search <keyword>                 — search past messages
 /agmsg team                             — list team members
 /agmsg send <agent> <message>           — send message
 /agmsg mode <monitor|turn|both|off>     — switch delivery mode
@@ -319,6 +320,7 @@ See [docs/opencode.md](docs/opencode.md) for full setup instructions.
 ~/.agents/skills/<cmd>/scripts/send.sh <team> <from> <to> "<message>"
 ~/.agents/skills/<cmd>/scripts/inbox.sh <team> <agent_id>
 ~/.agents/skills/<cmd>/scripts/history.sh <team> [agent_id] [limit]
+~/.agents/skills/<cmd>/scripts/search.sh <team> <keyword> [agent_id] [limit]
 ~/.agents/skills/<cmd>/scripts/team.sh <team>
 ~/.agents/skills/<cmd>/scripts/whoami.sh <project_path> <type>
 ~/.agents/skills/<cmd>/scripts/delivery.sh set <mode> <type> <project_path>

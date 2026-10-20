@@ -25,6 +25,7 @@ commands:
   inbox
   send <to> <message>
   history [agent] [limit]
+  search <keyword> [limit]
   team [team]
   config [show|set ...]
   mode [turn|off]
@@ -186,6 +187,14 @@ case "$COMMAND" in
       args+=("$@")
     fi
     run_script history.sh "${args[@]}"
+    ;;
+
+  search)
+    require_args "agmsg search <keyword> [limit]" 1 "$@"
+    resolve_identity 1 0
+    keyword="$1"
+    shift
+    run_script search.sh "$(first_team "$RESOLVED_TEAM")" "$keyword" "$RESOLVED_AGENT" "$@"
     ;;
 
   team)

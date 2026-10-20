@@ -54,6 +54,20 @@ teardown() {
   [[ "$output" =~ "$message" ]]
 }
 
+@test "dispatch: search finds a sent message by keyword" {
+  run bash "$SCRIPTS/windows/dispatch.sh" --type codex --project "$PROJECT_ALICE" --team demo --agent alice -- send bob "findme please"
+  [ "$status" -eq 0 ]
+  run bash "$SCRIPTS/windows/dispatch.sh" --type codex --project "$PROJECT_ALICE" --team demo -- search findme
+  [ "$status" -eq 0 ]
+  [[ "$output" =~ "findme please" ]]
+}
+
+@test "dispatch: search without a keyword prints usage" {
+  run bash "$SCRIPTS/windows/dispatch.sh" --type codex --project "$PROJECT_ALICE" --team demo -- search
+  [ "$status" -eq 2 ]
+  [[ "$output" =~ "agmsg search" ]]
+}
+
 @test "dispatch: codex mode off and turn delegate to delivery" {
   run bash "$SCRIPTS/windows/dispatch.sh" --type codex --project "$PROJECT_ALICE" -- mode off
   [ "$status" -eq 0 ]
