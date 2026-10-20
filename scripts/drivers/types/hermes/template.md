@@ -40,6 +40,7 @@ Four possible outputs:
   > - ask `send <agent> <message>` — send a message
   > - ask `team` — list team members
   > - ask `history` — message history
+  > - ask `search <keyword>` — search past messages
 
   5. Hermes has no agmsg automatic delivery hook. Set manual delivery explicitly:
      `~/.agents/skills/__SKILL_NAME__/scripts/delivery.sh set off hermes "$(pwd)"`
@@ -68,6 +69,9 @@ Four possible outputs:
 
 If argument is "history":
 1. Run: `~/.agents/skills/__SKILL_NAME__/scripts/history.sh $TEAM $AGENT`
+
+If argument is "search":
+1. Run: `~/.agents/skills/__SKILL_NAME__/scripts/search.sh $TEAM <keyword> $AGENT`
 
 If argument is "team":
 1. For each TEAM, run: `~/.agents/skills/__SKILL_NAME__/scripts/team.sh $TEAM`

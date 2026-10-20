@@ -23,6 +23,7 @@ Everyday commands (same across agents; shown here as the Claude Code `/agmsg` fo
 /agmsg send <agent> <msg>   # send a message to a teammate
 /agmsg team                 # list team members
 /agmsg history              # replay message history
+/agmsg search <keyword>     # search past messages
 /agmsg mode <monitor|turn|both|off>   # switch delivery mode
 /agmsg spawn <type> <name>  # launch a new peer agent in its own terminal
 /agmsg spawn <type> <name> --boot-prompt "<task>"   # ...and start it on <task> in its first turn
@@ -74,4 +75,5 @@ directly-invokable commands; `scripts/drivers/<axis>/` holds axis drivers and
 - [scripts/delivery.sh](scripts/delivery.sh): get/set the delivery mode.
 - [scripts/spawn.sh](scripts/spawn.sh) / [scripts/despawn.sh](scripts/despawn.sh): launch / tear down a peer agent.
 - [scripts/history.sh](scripts/history.sh): replay a room's history.
+- [scripts/search.sh](scripts/search.sh): search past messages by keyword.
 - [SKILL.md](SKILL.md): the agent-facing skill definition (full command reference).

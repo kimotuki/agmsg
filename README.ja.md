@@ -267,6 +267,7 @@ despawnは指定されたメンバーにのみ作用する — `despawn` を実�
 ```
 /agmsg                                  — 受信箱を確認（全チーム）
 /agmsg history                          — メッセージ履歴
+/agmsg search <keyword>                 — 過去メッセージ検索
 /agmsg team                             — チームメンバー一覧
 /agmsg send <agent> <message>           — メッセージ送信
 /agmsg mode <monitor|turn|both|off>     — 配信モード切り替え
@@ -318,6 +319,7 @@ $agmsg
 ~/.agents/skills/<cmd>/scripts/send.sh <team> <from> <to> "<message>"
 ~/.agents/skills/<cmd>/scripts/inbox.sh <team> <agent_id>
 ~/.agents/skills/<cmd>/scripts/history.sh <team> [agent_id] [limit]
+~/.agents/skills/<cmd>/scripts/search.sh <team> <keyword> [agent_id] [limit]
 ~/.agents/skills/<cmd>/scripts/team.sh <team>
 ~/.agents/skills/<cmd>/scripts/whoami.sh <project_path> <type>
 ~/.agents/skills/<cmd>/scripts/delivery.sh set <mode> <type> <project_path>
